@@ -25,14 +25,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func rollButton(_ sender: Any) {
-        index1 = Int.random(in: 0...5)
-        index2 = Int.random(in: 0...5)
-        
-        
-        
-        diceImageView1.image = UIImage(named: diceArray[index1])
-        
-        diceImageView2.image = UIImage(named: diceArray[index2])
+        updateDiceImages()
 //        print(index1)
     }
     
@@ -41,8 +34,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateDiceImages()
+        
     }
-
+    func updateDiceImages(){
+        index1 = Int.random(in: 0...5)
+        index2 = Int.random(in: 0...5)
+        diceImageView1.image = UIImage(named: diceArray[index1])
+        diceImageView2.image = UIImage(named: diceArray[index2])
+    }
 
 }
 
